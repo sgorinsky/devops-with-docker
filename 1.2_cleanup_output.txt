@@ -1,0 +1,7 @@
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES                   SIZE
+749d388a86ef        nginx               "nginx -g 'daemon of…"   15 minutes ago      Exited (0) 15 minutes ago                       compassionate_khayyam   0B (virtual 127MB)
+bbe98895eb1a        nginx               "nginx -g 'daemon of…"   32 minutes ago      Exited (0) 15 minutes ago                       affectionate_galileo    0B (virtual 127MB)
+a694379a7e90        nginx               "nginx -g 'daemon of…"   48 minutes ago      Up 48 minutes               80/tcp              amazing_goldwasser      2B (virtual 127MB)
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+nginx               latest              9beeba249f3e        12 days ago         127MB
+hello-world         latest              bf756fb1ae65        4 months ago        13.3kB
