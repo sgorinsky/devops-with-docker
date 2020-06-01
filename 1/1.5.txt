@@ -1,0 +1,18 @@
+### To get cURL, I searched and pulled a basic ubuntu image with cURL preinstalled 
+### Below are commands I ran before streaming container stdout to this file
+# docker search curl
+# docker pull tutum/curl
+# docker tag tutum/curl curl
+# docker run -dit --name loop curl
+# docker exec -it loop bash >> 1.5.txt
+
+root@67474047b2e4:/# curl http://helsinki.fi
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+root@67474047b2e4:/# exit
+exit
