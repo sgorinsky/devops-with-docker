@@ -5,11 +5,9 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
 RUN apt-get install -y nodejs
 
 COPY . .
-RUN cd frontend-example-docker
-RUN npm install && npm i -g serve
+RUN cd frontend-example-docker && npm install && npm i -g serve
 
 EXPOSE 80
 
-# CMD ["node", "start"]
-CMD bash
+CMD cd $(ls | grep frontend) && npm start
 
