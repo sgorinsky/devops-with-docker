@@ -11,7 +11,7 @@ module.exports.DB = {
 
 module.exports.PORT = process.env.PORT || 8000
 
-module.exports.FRONT_URL = process.env.FRONT_URL || ""
+module.exports.FRONT_URL = process.env.FRONT_URL || 'http://localhost:5000'
 
 module.exports.REDIS = process.env.REDIS
 
