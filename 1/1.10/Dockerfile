@@ -7,7 +7,8 @@ RUN apt-get install -y nodejs
 COPY . .
 RUN cd frontend-example-docker && npm install && npm i -g serve
 
-EXPOSE 80
+ENV API_URL=http://localhost:8000
+EXPOSE 5000
 
 CMD cd $(ls | grep frontend) && npm start
 
