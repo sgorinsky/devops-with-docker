@@ -1,0 +1,7 @@
+# commands to run both the frontend and backend (1.10 and 1.11)
+
+# frontend-ex image
+docker run -p 5000:5000 -it frontend-ex
+
+# backend-ex image
+docker run -p 8000:8000 -it backend-ex
