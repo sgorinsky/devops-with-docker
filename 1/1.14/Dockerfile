@@ -1,6 +1,6 @@
 FROM ruby:2.6.0
 
-RUN apt-get update -y && apt-get install nodejs
+RUN apt-get update -y && apt-get install nodejs -y
 
 COPY . .
 WORKDIR rails-example-project
