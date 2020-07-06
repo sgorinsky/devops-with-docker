@@ -1,0 +1,3 @@
+# Command I ran in order to mount container volume to host volume
+# Note: Ran while inside folder with logs.txt, if not, 'touch logs.txt' beforehand
+docker run -it -v "$(pwd)/logs.txt":/usr/app/logs.txt devopsdockeruh/first_volume_exercise
