@@ -5,5 +5,5 @@ services:
     first-volume-exercise: 
       image: devopsdockeruh/first_volume_exercise 
       volumes: 
-      - /Users/samgorinsky/documents/workspace/devops-with-docker/2/2.1/logs.txt:/usr/app/logs.txt
+      - ./logs.txt:/usr/app/logs.txt
       container_name: first_volume_exercise
