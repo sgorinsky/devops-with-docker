@@ -1,0 +1,12 @@
+version: '3.5'
+
+# Spins up two separate containers managing each image
+services:
+  frontend:
+    image: frontend-ex
+    ports:
+    - 5000:5000
+  backend:
+    image: backend-ex
+    ports:
+    - 8000:8000
