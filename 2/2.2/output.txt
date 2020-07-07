@@ -1,0 +1,3 @@
+# after container is running with host port mapped to container port 80
+curl localhost:80
+Ports configured correctly!!
