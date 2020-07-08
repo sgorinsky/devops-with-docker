@@ -11,3 +11,15 @@ services:
         - /var/run/docker.sock:/tmp/docker.sock:ro 
       ports: 
         - 80:80 
+    hello: 
+      image: nginx 
+      volumes: 
+        - ./hello.html:/usr/share/nginx/html/index.html:ro 
+      environment: 
+        - VIRTUAL_HOST=hello.colasloth.com 
+    world: 
+      image: nginx 
+      volumes: 
+        - ./world.html:/usr/share/nginx/html/index.html:ro 
+      environment: 
+        - VIRTUAL_HOST=world.colasloth.com 
