@@ -2,9 +2,11 @@ version: '3.5'
 
 services: 
     whoami: 
-      image: jwilder/whoami 
-      ports: 
-        - 8000 
+      image: jwilder/whoami
+      environment: 
+      - VIRTUAL_HOST=whoami.colasloth.com 
+      # ports: # Can't allocate more than one whoami to the same port
+      # - 8000:8000
     proxy: 
       image: jwilder/nginx-proxy 
       volumes: 
