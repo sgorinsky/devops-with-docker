@@ -1,0 +1,43 @@
+version: '3.3' 
+
+services: 
+  backend: 
+    image: backend-ex
+    ports: 
+    - 8000:8000
+    environment: 
+    - REDIS=redis
+    - DB_USERNAME=sam
+    - DB_PASSWORD=root123
+    - DB_HOST=postgres
+    volumes: 
+    - ./logs.txt:/app/logs.txt
+    container_name: backend
+    depends_on:
+    - postgres
+    - redis
+
+  frontend: 
+    image: frontend-ex
+    ports: 
+    - 5000:5000
+    environment:
+    - API_URL=http://localhost:8000
+    container_name: frontend
+
+  redis:
+    image: redis
+    restart: unless-stopped
+    container_name: redis
+
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+    - POSTGRES_USER=sam
+    - POSTGRES_PASSWORD=root123
+    volumes:
+    - database:/var/lib/postgresql/data
+
+volumes:
+  database:
