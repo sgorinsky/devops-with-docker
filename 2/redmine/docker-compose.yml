@@ -10,15 +10,18 @@ services:
     volumes:
       - database:/var/lib/postgresql/data
   
-  redmine: 
+  redmine:
     image: redmine
-    environment: 
+    environment:
       - REDMINE_DB_POSTGRES=db
       - REDMINE_DB_PASSWORD=example
-    ports: 
-      - '9999:3000' 
-    depends_on: 
+    ports:
+      - 9999:3000
+    volumes:
+      - files:/usr/src/redmine/files
+    depends_on:
       - db
 
 volumes:
   database:
+  files:
