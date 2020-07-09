@@ -1,13 +1,25 @@
-version: '3.5'
+version: '3.3' 
 
-services:
-  frontend:
-    image: frontend-ex
-    ports:
-    - 5000:5000
-  backend:
+services: 
+  backend: 
     image: backend-ex
-    ports:
-    - 8000:8000
+    ports: 
+      - 8000:8000
+    environment: 
+      - REDIS=redis
+    volumes: 
+      - ./logs.txt:/app/logs.txt
+    container_name: backend
+
+  frontend: 
+    image: frontend-ex
+    ports: 
+      - 5000:5000
+    environment:
+      - API_URL=http://localhost:8000
+    container_name: frontend
+
   redis:
-    image: redis:latest
+    image: redis
+    restart: unless-stopped
+    container_name: redis
