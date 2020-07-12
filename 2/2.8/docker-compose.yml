@@ -3,8 +3,8 @@ version: '3.3'
 services: 
   backend: 
     image: backend-ex
-    ports: 
-    - 8000:8000
+    # ports: 
+    # - 8000:8000
     environment: 
     - REDIS=redis
     - DB_USERNAME=sam
@@ -19,10 +19,10 @@ services:
 
   frontend: 
     image: frontend-ex
-    ports: 
-    - 5000:5000
+    # ports: 
+    # - 5000:5000
     environment:
-    - API_URL=http://localhost:8000
+    - API_URL=http://localhost:80
     container_name: frontend
 
   redis:
