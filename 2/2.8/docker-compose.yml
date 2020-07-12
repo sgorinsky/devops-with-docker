@@ -24,6 +24,8 @@ services:
     environment:
     - API_URL=http://localhost:80
     container_name: frontend
+    depends_on:
+    - backend
 
   redis:
     image: redis
