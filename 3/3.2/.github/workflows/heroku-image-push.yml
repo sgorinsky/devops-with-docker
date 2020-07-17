@@ -1,0 +1,20 @@
+name: Publish Over the Air Release
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  publish:
+    name: Install and publish
+    
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - uses: actions/checkout@v2
+      with: 
+        - heroku-api-key: ${{ secrets.HEROKU_API_KEY }}
+    
+    - run: ./actions/heroku-push

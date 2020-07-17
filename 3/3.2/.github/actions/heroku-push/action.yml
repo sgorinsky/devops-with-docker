@@ -1,0 +1,6 @@
+name: "Heroku Pusher"
+description: "Build image and push to heroku"
+
+runs:
+  using: "docker"
+  main: "Dockerfile"
