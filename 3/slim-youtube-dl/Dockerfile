@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y \
     apt-get purge -y --auto-remove curl && \ 
     rm -rf /var/lib/apt/lists/* 
 
+USER app 
+
 WORKDIR /app 
 
 ENTRYPOINT ["/usr/local/bin/youtube-dl"] 
